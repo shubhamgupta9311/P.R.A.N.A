@@ -15,10 +15,21 @@ const allowedOrigins = new Set(
 app.use(
   cors({
     origin(origin, callback) {
-      const localDevelopmentOrigin = /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin || "");
-      if (!origin || allowedOrigins.has(origin) || localDevelopmentOrigin) {
+      const localDevelopmentOrigin =
+        /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin || "");
+
+      const vercelOrigin =
+        /^https:\/\/p-r-a-n-a-.*\.vercel\.app$/.test(origin || "");
+
+      if (
+        !origin ||
+        allowedOrigins.has(origin) ||
+        localDevelopmentOrigin ||
+        vercelOrigin
+      ) {
         return callback(null, true);
       }
+
       return callback(new Error("Not allowed by CORS"));
     },
   }),

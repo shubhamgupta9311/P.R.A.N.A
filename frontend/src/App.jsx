@@ -283,7 +283,7 @@ function App() {
             <div className="analytics-panel"><h3>Relocation priority</h3>{priorityCounts.map((item) => <DistributionRow key={item.label} {...item} total={villages.length} tone={item.label.toLowerCase().replace("-", "")} />)}</div>
           </div>
         </section>
-        <footer className="page-footer">P.R.A.N.A. <span>Predictive Relocation & Risk Assessment Network</span></footer>
+        <footer className="page-footer">P.R.A.N.A. <span>Predictive Relocation Assessment Network for At-risk Habitation</span></footer>
       </main>
     </div>
   );

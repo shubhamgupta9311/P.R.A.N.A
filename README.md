@@ -1,6 +1,6 @@
 # P.R.A.N.A.
 
-## Predictive Relocation & Risk Assessment Network for Disaster Mitigation
+## Predictive Relocation Assessment Network for At-risk Habitation
 
 P.R.A.N.A. is a GIS-based disaster-management decision-support platform designed to help identify high-risk habitations and support data-driven relocation planning before a disaster occurs.
 

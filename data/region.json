@@ -1,0 +1,32 @@
+{
+  "regionName": "Upper Alaknanda pilot area",
+  "district": "Chamoli",
+  "state": "Uttarakhand",
+  "country": "India",
+  "center": [30.43, 79.47],
+  "zoom": 9,
+  "datasetStatus": "SYNTHETIC DEMO",
+  "scope": "Small illustrative pilot footprint for end-to-end prototype testing.",
+  "provenance": "All population, hazard, vulnerability, disaster-history, relocation-capacity, service, and safety values are synthetic. Village labels and map points are approximate demonstration anchors only. They are not official assessments, settlement boundaries, hazard extents, or verified relocation sites.",
+  "riskModel": {
+    "method": "Weighted rule-based assessment; not an ML prediction.",
+    "weights": {
+      "hazardScore": 0.4,
+      "vulnerabilityScore": 0.3,
+      "disasterHistoryScore": 0.3
+    },
+    "riskLevels": {
+      "LOW": "0-30",
+      "MEDIUM": "Above 30 through 60",
+      "HIGH": "Above 60"
+    },
+    "redZoneRule": "Composite score at least 70 and hazard score at least 60.",
+    "priorityRules": {
+      "IMMEDIATE": "Score at least 80",
+      "SHORT-TERM": "Score at least 60 and below 80",
+      "MEDIUM-TERM": "Score at least 40 and below 60",
+      "MONITOR": "Score below 40"
+    }
+  },
+  "hazardLayerNotice": "Hazard polygons are hand-drawn illustrative overlays for UI testing only. Replace with validated geospatial hazard data before operational use."
+}

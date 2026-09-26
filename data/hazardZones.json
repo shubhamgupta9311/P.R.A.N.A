@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "HZ-F01",
+      "properties": {
+        "name": "Demo river-flood exposure area",
+        "hazardType": "FLOOD",
+        "severity": "HIGH",
+        "status": "ILLUSTRATIVE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[79.51, 30.55], [79.55, 30.56], [79.57, 30.53], [79.54, 30.51], [79.50, 30.52], [79.51, 30.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HZ-L01",
+      "properties": {
+        "name": "Demo slope-instability exposure area",
+        "hazardType": "LANDSLIDE",
+        "severity": "HIGH",
+        "status": "ILLUSTRATIVE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[79.63, 30.49], [79.68, 30.50], [79.69, 30.47], [79.65, 30.46], [79.62, 30.47], [79.63, 30.49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HZ-F02",
+      "properties": {
+        "name": "Demo confluence flood exposure area",
+        "hazardType": "FLOOD",
+        "severity": "MEDIUM",
+        "status": "ILLUSTRATIVE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[79.30, 30.35], [79.34, 30.36], [79.36, 30.33], [79.33, 30.31], [79.29, 30.32], [79.30, 30.35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HZ-L02",
+      "properties": {
+        "name": "Demo slope-instability exposure area",
+        "hazardType": "LANDSLIDE",
+        "severity": "MEDIUM",
+        "status": "ILLUSTRATIVE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[79.40, 30.41], [79.44, 30.42], [79.46, 30.39], [79.43, 30.37], [79.39, 30.38], [79.40, 30.41]]]
+      }
+    }
+  ]
+}

@@ -77,6 +77,8 @@ The dashboard displays whether a selected village is:
 
 This helps identify settlements that may require relocation planning.
 
+For this prototype, a red-zone flag requires both a composite risk score of at least 70 and a hazard score of at least 60. This is a demonstrator rule, not an official land-use or evacuation determination.
+
 ---
 
 ### 4. Village Risk Explanation
@@ -184,3 +186,29 @@ Carrying Capacity Check
 Relocation Priority
         ↓
 Government Decision-Support Dashboard
+
+## Prototype Scope & Data
+
+The current pilot uses a small illustrative footprint in the Upper Alaknanda area of Chamoli, Uttarakhand. It includes 12 demonstration habitations, five candidate sites, and four GeoJSON hazard overlays so the end-to-end workflow can be exercised.
+
+All population, hazard, vulnerability, disaster-history, relocation capacity, facility, and safety values are synthetic. Map locations and hazard polygons are approximate UI examples, not validated boundaries or official assessments. Do not use this data for operational decisions. See [data/README.md](data/README.md) for provenance and requirements before substituting field data.
+
+The risk score is a transparent weighted rule: 40% hazard, 30% vulnerability, and 30% disaster history. Risk bands are LOW through 30, MEDIUM above 30 through 60, and HIGH above 60. Relocation candidates are checked for capacity, land, recorded hazard status, five essential services, and straight-line distance; unknown hazard status is never treated as safe. These rules are prototypes, not a trained ML model.
+
+## Run Locally
+
+Use two PowerShell terminals from the repository root:
+
+```powershell
+cd backend
+npm install
+npm run dev
+```
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+The dashboard runs at `http://localhost:5173` and the API at `http://localhost:5001`. The frontend reads the API base URL from `VITE_API_URL`; it defaults to the local API above. The API exposes health, metadata, hazard GeoJSON, village assessments and filters, summary analytics, and relocation-site assessments under `/api`.

@@ -1,19 +1,12 @@
-function StatCard({ title, value, description }) {
-    return (
-      <div className="rounded-xl border border-slate-800 bg-slate-900 p-6">
-        <p className="text-sm text-slate-400">
-          {title}
-        </p>
-  
-        <h2 className="mt-2 text-3xl font-bold text-white">
-          {value}
-        </h2>
-  
-        <p className="mt-2 text-sm text-slate-500">
-          {description}
-        </p>
-      </div>
-    )
-  }
-  
-  export default StatCard
+function StatCard({ title, value, note, tone }) {
+  return (
+    <article className={`stat-card stat-${tone}`}>
+      <div className="stat-card-top"><span className="stat-mark" /><span className="stat-caption">FIELD METRIC</span></div>
+      <p className="stat-title">{title}</p>
+      <strong className="stat-value">{value}</strong>
+      <p className="stat-note">{note}</p>
+    </article>
+  );
+}
+
+export default StatCard;

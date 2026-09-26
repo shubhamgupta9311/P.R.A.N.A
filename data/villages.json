@@ -1,38 +1,146 @@
 [
-    {
-      "id": "V001",
-      "name": "Rampur",
-      "population": 4820,
-      "latitude": 28.6139,
-      "longitude": 77.2090,
-      "hazardScore": 90,
-      "vulnerabilityScore": 70,
-      "disasterHistoryScore": 80,
-      "floodRisk": "HIGH",
-  "landslideRisk": "MEDIUM"
-    },
-    {
-      "id": "V002",
-      "name": "Lakshmipur",
-      "population": 2300,
-      "latitude": 28.6280,
-      "longitude": 77.2180,
-      "hazardScore": 55,
-      "vulnerabilityScore": 60,
-      "disasterHistoryScore": 40,
-      "floodRisk": "MEDIUM",
-"landslideRisk": "LOW"
-    },
-    {
-      "id": "V003",
-      "name": "Chandpur",
-      "population": 5100,
-      "latitude": 28.6000,
-      "longitude": 77.1900,
-      "hazardScore": 25,
-      "vulnerabilityScore": 35,
-      "disasterHistoryScore": 20,
-      "floodRisk": "LOW",
-"landslideRisk": "LOW"
-    }
-  ]
+  {
+    "id": "D001",
+    "name": "Demo Joshimath",
+    "population": 4820,
+    "latitude": 30.5550,
+    "longitude": 79.5650,
+    "hazardScore": 90,
+    "vulnerabilityScore": 70,
+    "disasterHistoryScore": 80,
+    "floodRisk": "HIGH",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D002",
+    "name": "Demo Tapovan",
+    "population": 2300,
+    "latitude": 30.4977,
+    "longitude": 79.6740,
+    "hazardScore": 78,
+    "vulnerabilityScore": 72,
+    "disasterHistoryScore": 60,
+    "floodRisk": "HIGH",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D003",
+    "name": "Demo Pipalkoti",
+    "population": 3650,
+    "latitude": 30.4250,
+    "longitude": 79.4300,
+    "hazardScore": 64,
+    "vulnerabilityScore": 68,
+    "disasterHistoryScore": 55,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D004",
+    "name": "Demo Helang",
+    "population": 1280,
+    "latitude": 30.5140,
+    "longitude": 79.4250,
+    "hazardScore": 92,
+    "vulnerabilityScore": 88,
+    "disasterHistoryScore": 80,
+    "floodRisk": "HIGH",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D005",
+    "name": "Demo Chamoli",
+    "population": 4150,
+    "latitude": 30.4020,
+    "longitude": 79.3200,
+    "hazardScore": 50,
+    "vulnerabilityScore": 65,
+    "disasterHistoryScore": 40,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "MEDIUM"
+  },
+  {
+    "id": "D006",
+    "name": "Demo Nandprayag",
+    "population": 1760,
+    "latitude": 30.3330,
+    "longitude": 79.3290,
+    "hazardScore": 45,
+    "vulnerabilityScore": 52,
+    "disasterHistoryScore": 36,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "LOW"
+  },
+  {
+    "id": "D007",
+    "name": "Demo Karnaprayag",
+    "population": 5400,
+    "latitude": 30.2580,
+    "longitude": 79.2170,
+    "hazardScore": 34,
+    "vulnerabilityScore": 45,
+    "disasterHistoryScore": 25,
+    "floodRisk": "LOW",
+    "landslideRisk": "MEDIUM"
+  },
+  {
+    "id": "D008",
+    "name": "Demo Govindghat",
+    "population": 980,
+    "latitude": 30.6250,
+    "longitude": 79.5600,
+    "hazardScore": 85,
+    "vulnerabilityScore": 48,
+    "disasterHistoryScore": 75,
+    "floodRisk": "HIGH",
+    "landslideRisk": "MEDIUM"
+  },
+  {
+    "id": "D009",
+    "name": "Demo Badrinath Road",
+    "population": 720,
+    "latitude": 30.6400,
+    "longitude": 79.5250,
+    "hazardScore": 60,
+    "vulnerabilityScore": 55,
+    "disasterHistoryScore": 70,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D010",
+    "name": "Demo Gopeshwar",
+    "population": 6200,
+    "latitude": 30.4040,
+    "longitude": 79.3230,
+    "hazardScore": 25,
+    "vulnerabilityScore": 30,
+    "disasterHistoryScore": 18,
+    "floodRisk": "LOW",
+    "landslideRisk": "LOW"
+  },
+  {
+    "id": "D011",
+    "name": "Demo Tharali",
+    "population": 2550,
+    "latitude": 30.0640,
+    "longitude": 79.5230,
+    "hazardScore": 66,
+    "vulnerabilityScore": 74,
+    "disasterHistoryScore": 45,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "HIGH"
+  },
+  {
+    "id": "D012",
+    "name": "Demo Langsi",
+    "population": 1410,
+    "latitude": 30.5350,
+    "longitude": 79.4450,
+    "hazardScore": 42,
+    "vulnerabilityScore": 35,
+    "disasterHistoryScore": 60,
+    "floodRisk": "MEDIUM",
+    "landslideRisk": "LOW"
+  }
+]

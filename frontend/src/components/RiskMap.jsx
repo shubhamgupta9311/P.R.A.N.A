@@ -1,39 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   MapContainer,
   TileLayer,
   CircleMarker,
-  Circle,
+  Polygon,
   Popup,
 } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5001";
-
-function RiskMap({ onVillageSelect }) {
-  const [villages, setVillages] = useState([]);
-
-  useEffect(() => {
-    fetch(`${API_URL}/api/villages`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch villages");
-        }
-
-        return response.json();
-      })
-      .then((data) => {
-        setVillages(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching villages:", error);
-        setVillages([]);
-      });
-  }, []);
-
-  const position = [28.6139, 77.209];
+function RiskMap({
+  villages = [],
+  hazardZones = [],
+  center = [30.43, 79.47],
+  zoom = 9,
+  onVillageSelect,
+}) {
+  const [showFlood, setShowFlood] = useState(true);
+  const [showLandslide, setShowLandslide] = useState(true);
 
   // Decide marker color based on risk level
   const getRiskColor = (riskLevel) => {
@@ -49,10 +33,10 @@ function RiskMap({ onVillageSelect }) {
   };
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden rounded-xl border border-slate-800">
+    <div className="risk-map-frame">
       <MapContainer
-        center={position}
-        zoom={10}
+        center={center}
+        zoom={zoom}
         className="h-full w-full"
       >
         <TileLayer
@@ -60,37 +44,21 @@ function RiskMap({ onVillageSelect }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Circle
-          center={[28.62, 77.21]}
-          radius={1800}
-          pathOptions={{
-            color: "blue",
-            fillColor: "blue",
-            fillOpacity: 0.15,
-          }}
-        >
-          <Popup>
-            <strong>Flood Hazard Zone</strong>
-            <br />
-            Area with elevated flood risk
-          </Popup>
-        </Circle>
-
-        <Circle
-          center={[28.6, 77.19]}
-          radius={1400}
-          pathOptions={{
-            color: "orange",
-            fillColor: "orange",
-            fillOpacity: 0.15,
-          }}
-        >
-          <Popup>
-            <strong>Landslide Hazard Zone</strong>
-            <br />
-            Area with elevated landslide risk
-          </Popup>
-        </Circle>
+        {hazardZones.features?.map((zone) => {
+          const hazardType = zone.properties.hazardType;
+          if ((hazardType === "FLOOD" && !showFlood) || (hazardType === "LANDSLIDE" && !showLandslide)) return null;
+          const color = hazardType === "FLOOD" ? "#3983a7" : "#c68142";
+          const positions = zone.geometry.coordinates[0].map(([longitude, latitude]) => [latitude, longitude]);
+          return (
+            <Polygon key={zone.id} positions={positions} pathOptions={{ color, fillColor: color, fillOpacity: 0.19, weight: 2 }}>
+              <Popup>
+                <strong>{zone.properties.name}</strong>
+                <p>{hazardType} · {zone.properties.severity}</p>
+                <p>Illustrative footprint only; not an official hazard boundary.</p>
+              </Popup>
+            </Polygon>
+          );
+        })}
 
         {villages.map((village) => {
           const riskColor = getRiskColor(village.riskLevel);
@@ -105,6 +73,7 @@ function RiskMap({ onVillageSelect }) {
                 fillColor: riskColor,
                 fillOpacity: 0.8,
               }}
+              eventHandlers={{ click: () => onVillageSelect(village) }}
             >
               <Popup>
                 <div className="space-y-2">
@@ -141,25 +110,27 @@ function RiskMap({ onVillageSelect }) {
         })}
       </MapContainer>
 
-      {/* Risk Legend */}
-      <div className="absolute top-4 right-4 z-[1000] bg-white rounded-lg shadow-lg p-4 text-sm">
-        <h3 className="font-bold text-slate-800 mb-3">
-          Risk Level
-        </h3>
+      <div className="map-layer-control">
+        <h3>MAP LAYERS</h3>
+        <label><input type="checkbox" checked={showFlood} onChange={(event) => setShowFlood(event.target.checked)} /><span className="layer-swatch swatch-flood" />Flood footprint</label>
+        <label><input type="checkbox" checked={showLandslide} onChange={(event) => setShowLandslide(event.target.checked)} /><span className="layer-swatch swatch-landslide" />Landslide footprint</label>
+      </div>
+      <div className="map-legend">
+        <h3>VILLAGE RISK</h3>
 
         <div className="flex items-center gap-2 mb-2">
-          <span className="w-3 h-3 rounded-full bg-red-500"></span>
-          <span className="text-slate-700">High Risk</span>
+          <span className="legend-dot legend-high" />
+          <span>High risk</span>
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          <span className="w-3 h-3 rounded-full bg-orange-500"></span>
-          <span className="text-slate-700">Medium Risk</span>
+          <span className="legend-dot legend-medium" />
+          <span>Medium risk</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-full bg-green-500"></span>
-          <span className="text-slate-700">Low Risk</span>
+          <span className="legend-dot legend-low" />
+          <span>Low risk</span>
         </div>
       </div>
     </div>

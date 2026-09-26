@@ -1,47 +1,82 @@
 [
-    {
-      "id": "R001",
-      "name": "Safe Zone A",
-      "latitude": 28.65,
-      "longitude": 77.25,
-      "capacity": 6000,
-      "landAvailable": true,
-      "facilities": {
-        "water": true,
-        "hospital": true,
-        "school": true,
-        "road": true,
-        "electricity": true
-      }
-    },
-    {
-      "id": "R002",
-      "name": "Safe Zone B",
-      "latitude": 28.67,
-      "longitude": 77.28,
-      "capacity": 3000,
-"landAvailable": true,
-      "facilities": {
-        "water": true,
-        "hospital": false,
-        "school": true,
-        "road": true,
-        "electricity": true
-      }
-    },
-    {
-      "id": "R003",
-      "name": "Safe Zone C",
-      "latitude": 28.59,
-      "longitude": 77.17,
-      "capacity": 7000,
-      "landAvailable": true,
-      "facilities": {
-        "water": true,
-        "hospital": true,
-        "school": true,
-        "road": true,
-        "electricity": true
-      }
+  {
+    "id": "R001",
+    "name": "Demo North Resilience Hub",
+    "latitude": 30.5900,
+    "longitude": 79.5300,
+    "capacity": 7200,
+    "landAvailable": true,
+    "hazardRisk": "LOW",
+    "facilities": {
+      "water": true,
+      "hospital": true,
+      "school": true,
+      "road": true,
+      "electricity": true
     }
-  ]
+  },
+  {
+    "id": "R002",
+    "name": "Demo Valley Resettlement Site",
+    "latitude": 30.4250,
+    "longitude": 79.3950,
+    "capacity": 3100,
+    "landAvailable": true,
+    "hazardRisk": "MEDIUM",
+    "facilities": {
+      "water": true,
+      "hospital": false,
+      "school": true,
+      "road": true,
+      "electricity": true
+    }
+  },
+  {
+    "id": "R003",
+    "name": "Demo South Community Hub",
+    "latitude": 30.2550,
+    "longitude": 79.2350,
+    "capacity": 8000,
+    "landAvailable": true,
+    "hazardRisk": "LOW",
+    "facilities": {
+      "water": true,
+      "hospital": true,
+      "school": true,
+      "road": true,
+      "electricity": true
+    }
+  },
+  {
+    "id": "R004",
+    "name": "Demo East Relief Site",
+    "latitude": 30.5050,
+    "longitude": 79.6500,
+    "capacity": 1800,
+    "landAvailable": false,
+    "hazardRisk": "MEDIUM",
+    "facilities": {
+      "water": true,
+      "hospital": false,
+      "school": true,
+      "road": true,
+      "electricity": false
+    }
+  },
+  {
+    "id": "R005",
+    "name": "Demo West Planning Site",
+    "latitude": 30.4200,
+    "longitude": 79.3450,
+    "capacity": 4600,
+    "landAvailable": true,
+    "hazardRisk": "LOW",
+    "facilities": {
+      "water": true,
+      "hospital": true,
+      "school": false,
+      "road": true,
+      "electricity": true
+    }
+  }
+]

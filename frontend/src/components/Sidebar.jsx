@@ -1,54 +1,28 @@
 function Sidebar() {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
-
+  const sections = [
+    ["dashboard", "Overview", "01"],
+    ["risk-map", "Risk map", "02"],
+    ["villages", "Villages", "03"],
+    ["relocation", "Relocation", "04"],
+    ["analytics", "Analytics", "05"],
+  ];
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white p-6">
-      <h1 className="text-2xl font-bold mb-10">PRANA</h1>
-
-      <nav className="space-y-3">
-        <button
-          onClick={() => scrollToSection("dashboard")}
-          className="w-full text-left px-4 py-3 rounded-lg bg-slate-800"
-        >
-          Dashboard
-        </button>
-
-        <button
-          onClick={() => scrollToSection("risk-map")}
-          className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-800"
-        >
-          Risk Map
-        </button>
-
-        <button
-          onClick={() => scrollToSection("villages")}
-          className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-800"
-        >
-          Villages
-        </button>
-
-        <button
-          onClick={() => scrollToSection("relocation")}
-          className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-800"
-        >
-          Relocation
-        </button>
-
-        <button
-          onClick={() => scrollToSection("analytics")}
-          className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-800"
-        >
-          Analytics
-        </button>
+    <aside className="sidebar">
+      <a className="brand" href="#dashboard" aria-label="PRANA overview">
+        <span className="brand-mark">P</span>
+        <span><strong>PRANA</strong><small>RISK INTELLIGENCE</small></span>
+      </a>
+      <div className="sidebar-rule" />
+      <p className="nav-caption">WORKSPACE</p>
+      <nav className="side-nav" aria-label="Main navigation">
+        {sections.map(([id, label, number]) => (
+          <a key={id} href={`#${id}`} className="nav-link">
+            <span className="nav-number">{number}</span><span>{label}</span>
+            {id === "villages" && <span className="nav-indicator" />}
+          </a>
+        ))}
       </nav>
+      <div className="sidebar-bottom"><span className="status-dot" /><span>Monitoring active</span><strong>LIVE</strong></div>
     </aside>
   );
 }

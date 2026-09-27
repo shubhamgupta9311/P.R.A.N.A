@@ -264,9 +264,21 @@ function App() {
             </div>
             {selectedVillage.redZone && <div className="red-zone-explanation"><strong>Red-zone flag</strong><span>{selectedVillage.redZoneReason}</span></div>}
             <div className="factor-grid">
-              {selectedVillage.riskFactors.map((factor) => (
-                <div className="factor-row" key={factor.key}><div><span>{factor.label}</span><strong>{factor.score}<small>/100 · +{factor.contribution}</small></strong></div><div className="factor-track"><i style={{ width: `${Math.min(factor.score, 100)}%` }} /></div><small className="factor-weight">Weight {factor.weight * 100}%</small></div>
-              ))}
+              {selectedVillage.riskFactors.map((factor) => {
+                const tone = getScoreTone(factor.score);
+                return (
+                  <div className="factor-row" key={factor.key}>
+                    <div>
+                      <span>{factor.label}</span>
+                      <strong>{factor.score}<small>/100 · +{factor.contribution}</small></strong>
+                    </div>
+                    <div className="factor-track">
+                      <i className={`factor-fill factor-fill-${tone}`} style={{ width: `${Math.min(factor.score, 100)}%` }} />
+                    </div>
+                    <small className="factor-weight">Weight {factor.weight * 100}%</small>
+                  </div>
+                );
+              })}
               <div className="factor-callout"><span>Overall risk score</span><strong>{selectedVillage.riskScore}<small>/100</small></strong><span>Primary driver: {selectedVillage.primaryDriver.replace("Score", "")}</span><span>Flood {selectedVillage.floodRisk} <b>·</b> Landslide {selectedVillage.landslideRisk}</span></div>
             </div>
           </section>
@@ -291,6 +303,12 @@ function App() {
 
 function DistributionRow({ label, count, total, tone }) {
   return <div className="distribution-row"><span className={`distribution-dot tone-${tone}`} /><span className="distribution-label">{label}</span><span className="distribution-track"><i className={`tone-fill-${tone}`} style={{ width: `${total ? (count / total) * 100 : 0}%` }} /></span><strong>{count}</strong></div>;
+}
+
+function getScoreTone(score) {
+  if (score >= 70) return "high";
+  if (score >= 35) return "medium";
+  return "low";
 }
 
 export default App;

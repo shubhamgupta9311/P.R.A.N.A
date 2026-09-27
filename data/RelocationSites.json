@@ -1,7 +1,7 @@
 [
   {
     "id": "R001",
-    "name": "Demo North Resilience Hub",
+    "name": "North Resilience Hub",
     "latitude": 30.5900,
     "longitude": 79.5300,
     "capacity": 7200,
@@ -17,7 +17,7 @@
   },
   {
     "id": "R002",
-    "name": "Demo Valley Resettlement Site",
+    "name": "Valley Resettlement Site",
     "latitude": 30.4250,
     "longitude": 79.3950,
     "capacity": 3100,
@@ -33,7 +33,7 @@
   },
   {
     "id": "R003",
-    "name": "Demo South Community Hub",
+    "name": "South Community Hub",
     "latitude": 30.2550,
     "longitude": 79.2350,
     "capacity": 8000,
@@ -49,7 +49,7 @@
   },
   {
     "id": "R004",
-    "name": "Demo East Relief Site",
+    "name": "East Relief Site",
     "latitude": 30.5050,
     "longitude": 79.6500,
     "capacity": 1800,
@@ -65,7 +65,7 @@
   },
   {
     "id": "R005",
-    "name": "Demo West Planning Site",
+    "name": "West Planning Site",
     "latitude": 30.4200,
     "longitude": 79.3450,
     "capacity": 4600,

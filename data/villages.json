@@ -1,7 +1,7 @@
 [
   {
     "id": "D001",
-    "name": "Demo Joshimath",
+    "name": "Joshimath",
     "population": 4820,
     "latitude": 30.5550,
     "longitude": 79.5650,
@@ -13,7 +13,7 @@
   },
   {
     "id": "D002",
-    "name": "Demo Tapovan",
+    "name": "Tapovan",
     "population": 2300,
     "latitude": 30.4977,
     "longitude": 79.6740,
@@ -25,7 +25,7 @@
   },
   {
     "id": "D003",
-    "name": "Demo Pipalkoti",
+    "name": "Pipalkoti",
     "population": 3650,
     "latitude": 30.4250,
     "longitude": 79.4300,
@@ -37,7 +37,7 @@
   },
   {
     "id": "D004",
-    "name": "Demo Helang",
+    "name": "Helang",
     "population": 1280,
     "latitude": 30.5140,
     "longitude": 79.4250,
@@ -49,7 +49,7 @@
   },
   {
     "id": "D005",
-    "name": "Demo Chamoli",
+    "name": "Chamoli",
     "population": 4150,
     "latitude": 30.4020,
     "longitude": 79.3200,
@@ -61,7 +61,7 @@
   },
   {
     "id": "D006",
-    "name": "Demo Nandprayag",
+    "name": "Nandprayag",
     "population": 1760,
     "latitude": 30.3330,
     "longitude": 79.3290,
@@ -73,7 +73,7 @@
   },
   {
     "id": "D007",
-    "name": "Demo Karnaprayag",
+    "name": "Karnaprayag",
     "population": 5400,
     "latitude": 30.2580,
     "longitude": 79.2170,
@@ -85,7 +85,7 @@
   },
   {
     "id": "D008",
-    "name": "Demo Govindghat",
+    "name": "Govindghat",
     "population": 980,
     "latitude": 30.6250,
     "longitude": 79.5600,
@@ -97,7 +97,7 @@
   },
   {
     "id": "D009",
-    "name": "Demo Badrinath Road",
+    "name": "Badrinath Road",
     "population": 720,
     "latitude": 30.6400,
     "longitude": 79.5250,
@@ -109,7 +109,7 @@
   },
   {
     "id": "D010",
-    "name": "Demo Gopeshwar",
+    "name": "Gopeshwar",
     "population": 6200,
     "latitude": 30.4040,
     "longitude": 79.3230,
@@ -121,7 +121,7 @@
   },
   {
     "id": "D011",
-    "name": "Demo Tharali",
+    "name": "Tharali",
     "population": 2550,
     "latitude": 30.0640,
     "longitude": 79.5230,
@@ -133,7 +133,7 @@
   },
   {
     "id": "D012",
-    "name": "Demo Langsi",
+    "name": "Langsi",
     "population": 1410,
     "latitude": 30.5350,
     "longitude": 79.4450,
